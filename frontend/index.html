@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Resume Analyser</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>🚀 AI Resume Analyser</h1>
+      <p>Upload your resume aur turant AI-powered feedback pao</p>
+    </header>
+
+    <div class="upload-box" id="uploadBox">
+      <input type="file" id="fileInput" accept=".pdf,.docx" hidden>
+      <div id="uploadContent">
+        <div class="upload-icon">📄</div>
+        <p><strong>Click karo ya file drag karo</strong></p>
+        <p class="file-hint">PDF ya DOCX format supported</p>
+      </div>
+      <p id="fileName" class="file-name"></p>
+    </div>
+
+    <button id="analyzeBtn" disabled>Analyze Resume</button>
+
+    <div id="loader" class="loader hidden">
+      <div class="spinner"></div>
+      <p>AI aapka resume analyze kar raha hai...</p>
+    </div>
+
+    <div id="results" class="results hidden">
+      <div class="score-card">
+        <div class="score-circle">
+          <span id="scoreValue">0</span>
+          <span class="score-max">/100</span>
+        </div>
+        <p>Overall Score</p>
+      </div>
+
+      <div class="section">
+        <h3>🛠️ Skills Found</h3>
+        <div id="skillsList" class="tags"></div>
+      </div>
+
+      <div class="section">
+        <h3>✅ Strengths</h3>
+        <ul id="strengthsList" class="list strengths"></ul>
+      </div>
+
+      <div class="section">
+        <h3>⚠️ Weaknesses</h3>
+        <ul id="weaknessesList" class="list weaknesses"></ul>
+      </div>
+
+      <div class="section">
+        <h3>💡 Suggestions</h3>
+        <ul id="suggestionsList" class="list suggestions"></ul>
+      </div>
+
+      <button id="resetBtn">Analyze Another Resume</button>
+    </div>
+
+    <div id="errorBox" class="error-box hidden"></div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
