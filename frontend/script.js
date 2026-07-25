@@ -1,5 +1,4 @@
-const API_URL = "http://127.0.0.1:8000/analyze";
-
+const API_URL = "https://ai-resume-analyser-2pfu.onrender.com/analyze";
 const uploadBox = document.getElementById("uploadBox");
 const fileInput = document.getElementById("fileInput");
 const fileName = document.getElementById("fileName");
