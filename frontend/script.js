@@ -93,8 +93,17 @@ analyzeBtn.addEventListener("click", async () => {
 });
 
 function displayResults(data) {
+  const score = data.overall_score ?? 0;
   document.getElementById("scoreValue").textContent = data.overall_score ?? "N/A";
 
+  const scoreCircle = document.querySelector(".score-circle");
+  if (score >= 75) {
+    scoreCircle.style.background = "conic-gradient(#10b981, #34d399, #6ee7b7, #10b981)";
+  } else if (score >= 50) {
+    scoreCircle.style.background = "conic-gradient(#f59e0b, #fbbf24, #fcd34d, #f59e0b)";
+  } else {
+    scoreCircle.style.background = "conic-gradient(#ef4444, #f87171, #fca5a5, #ef4444)";
+  }
   const skillsList = document.getElementById("skillsList");
   skillsList.innerHTML = "";
   (data.skills_found || []).forEach(skill => {
