@@ -308,3 +308,61 @@ header p {
 .hidden {
   display: none;
 }
+.dark-toggle {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+.dark-toggle:hover {
+  transform: scale(1.1) rotate(15deg);
+}
+
+body.dark-mode {
+  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+}
+
+body.dark-mode .container {
+  background: rgba(24, 24, 27, 0.98);
+}
+
+body.dark-mode header p,
+body.dark-mode .score-card p {
+  color: #a1a1aa;
+}
+
+body.dark-mode .section h3 {
+  color: #f4f4f5;
+}
+
+body.dark-mode .upload-box {
+  background: linear-gradient(135deg, #27272a 0%, #3f3f46 100%);
+  border-color: #7c3aed;
+}
+
+body.dark-mode .file-hint {
+  color: #71717a;
+}
+
+body.dark-mode .score-circle::before {
+  background: #18181b;
+}
+
+body.dark-mode #resetBtn {
+  background: #27272a;
+  color: #e4e4e7;
+}
+
+body.dark-mode #resetBtn:hover {
+  background: #3f3f46;
+}

@@ -148,3 +148,18 @@ resetBtn.addEventListener("click", () => {
   results.classList.add("hidden");
   hideError();
 });
+// Dark mode toggle
+const darkModeToggle = document.getElementById("darkModeToggle");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+  darkModeToggle.textContent = "☀️";
+}
+
+darkModeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  const isDark = document.body.classList.contains("dark-mode");
+  darkModeToggle.textContent = isDark ? "☀️" : "🌙";
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+});
